@@ -3,6 +3,7 @@ import Home from './components/Home'
 import Assignment1 from './components/Assignment1'
 import Assignment2 from './components/Assignment2'
 import Assignment3 from './components/Assignment3'
+import Assignment4 from './components/Assignment4'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
           />} />
           <Route path="/assignment-2" element={<Assignment2 />} />
           <Route path="/assignment-3" element={<Assignment3 />} />
-          {/* <Route path="/assignment-4" element={<Assignment4 />} /> */}
+          <Route path="/assignment-4" element={<Assignment4 />} />
           {/* <Route path="/assignment-5" element={<Assignment5 />} /> */}
           {/* <Route path="/assignment-6" element={<Assignment6 />} /> */}
           {/* <Route path="/assignment-7" element={<Assignment7 />} /> */}
