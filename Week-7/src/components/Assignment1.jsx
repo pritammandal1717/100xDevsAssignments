@@ -1,7 +1,7 @@
 
 function Assignment1(props) {
     return (
-        <div className="w-screen flex justify-center">
+        <div className="w-screen h-screen flex justify-center items-center bg-cyan-900">
             <div className="flex flex-col bg-slate-100 rounded-md overflow-hidden">
                 <div className="h-40 w-80 ">
                     <img src={props.bannerImage} alt="Profile Picture" className="h-full w-full" />
