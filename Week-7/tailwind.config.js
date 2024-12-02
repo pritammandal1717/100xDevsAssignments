@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'background': "url('background.jpg')",
+      },
       keyframes: {
         'border-spin': {
           '100%': {

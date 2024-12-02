@@ -6,11 +6,13 @@ import Assignment3 from './components/Assignment3'
 import Assignment4 from './components/Assignment4'
 import Assignment6 from './components/Assignment6'
 import Assignment5 from './components/Assignment5'
+import Assignment7 from './components/Assignment7'
+import {RecoilRoot} from 'recoil'
 
 function App() {
 
   return (
-    <>
+    <RecoilRoot>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,10 +31,10 @@ function App() {
           <Route path="/assignment-4" element={<Assignment4 />} />
           <Route path="/assignment-5" element={<Assignment5 />} />
           <Route path="/assignment-6" element={<Assignment6 />} />
-          {/* <Route path="/assignment-7" element={<Assignment7 />} /> */}
+          <Route path="/assignment-7" element={<Assignment7 />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </RecoilRoot>
   )
 }
 
