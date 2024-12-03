@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react"
-import axios from 'axios'
+import axios from "axios";
 import { FaGithub } from "react-icons/fa";
+import { useRecoilState } from "recoil";
+import { gitUserAtom } from "../store/api/data";
 
 function Assignment5() {
     const [input, setInput] = useState("");
-    const [gitUser, setGitUser] = useState({
-        name: "",
-        avatar: "",
-        bio: "",
-        noOfRepos: "",
-        githubUrl: "",
-        noOfFollowers: "",
-        noOfFollowings: "",
-        memberSince: "",
-        portfolio: "",
-    })
+    const [gitUser, setGitUser] = useRecoilState(gitUserAtom)
+    console.log("Hii")
+
+    // const [gitUser, setGitUser] = useState({
+    //     name: "",
+    //     avatar: "",
+    //     bio: "",
+    //     noOfRepos: "",
+    //     githubUrl: "",
+    //     noOfFollowers: "",
+    //     noOfFollowings: "",
+    //     memberSince: "",
+    //     portfolio: "",
+    // })
 
     async function downloadData(username) {
         const response = await axios.get(`https://api.github.com/users/${username}`)
@@ -37,6 +42,7 @@ function Assignment5() {
 const memberSince = new Date(gitUser.memberSince);
 
 const calculateDuration = () => {
+    if (!memberSince) return {};
     const now = new Date();
     const diff = now - memberSince;
 
@@ -67,14 +73,14 @@ const [duration, setDuration] = useState(calculateDuration());
 
 useEffect(() => {
 
-    if (gitUser.memberSince != "") {
+    if (gitUser.memberSince) {
         const interval = setInterval(() => {
             setDuration(calculateDuration());
         }, 1000);
         return () => clearInterval(interval);
     }
 
-}, [gitUser])
+}, [gitUser.memberSince])
 return (
     <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-300">
 
